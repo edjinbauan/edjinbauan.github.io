@@ -631,7 +631,7 @@ margin: 0;
 
 @media screen and (max-width: 992px) {
   .reflection-container {
-  display: none;
+  display: none !important;
   }
 }
 
@@ -645,3 +645,11 @@ margin: 0;
   padding-right: 430px;
 }
 
+
+#thank-you-message {
+  display: none;
+}
+
+#thank-you-message.show {
+  display: block;
+}
