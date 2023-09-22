@@ -653,3 +653,38 @@ margin: 0;
 #thank-you-message.show {
   display: block;
 }
+
+ /* Add your CSS styles for the modal here */
+ .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  color: rgb(0, 92, 64) !important;
+}
+
+.contentmodal {
+  padding: 10px;
+  text-align: center;
+}
+
+#sendmessage {
+  color: rgb(0, 92, 64);
+}
+
+#errormessage {
+  color: red;
+}
