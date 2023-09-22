@@ -129,13 +129,13 @@ $(document).ready(function () {
           data: $(this).serialize(),
           success: function () {
               // Show success message in modal
-              $("#modalMessage").text("Your Email has been sent. Thank you!");
+              $("#modalMessage").text("Your Message has been sent. Thank you!");
               $("#modalMessage").css("color", "green");
               $("#myModal").css("display", "block");
           },
           error: function () {
               // Show error message in modal
-              $("#modalMessage").text("Your Email has been sent. Thank you!");
+              $("#modalMessage").text("Your Message has been sent. Thank you!");
               $("#modalMessage").css("color", "green");
               $("#myModal").css("display", "block");
           }
