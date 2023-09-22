@@ -92,7 +92,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      action = 'contactform/https://docs.google.com/forms/u/1/d/e/1FAIpQLSd1HEkAFhY8oxDfqs_NsVKU3i08uFLwBmv5W8LdXmy6PgXBvg/formResponse';
     }
     $.ajax({
       type: "POST",
@@ -116,3 +116,35 @@ jQuery(document).ready(function($) {
   });
 
 });
+
+
+$(document).ready(function () {
+  $("#myForm").submit(function (event) {
+      event.preventDefault();
+
+      // Perform AJAX form submission
+      $.ajax({
+          url: $(this).attr("action"),
+          type: $(this).attr("method"),
+          data: $(this).serialize(),
+          success: function () {
+              // Show success message in modal
+              $("#modalMessage").text("Your Email has been sent. Thank you!");
+              $("#modalMessage").css("color", "green");
+              $("#myModal").css("display", "block");
+          },
+          error: function () {
+              // Show error message in modal
+              $("#modalMessage").text("Your Email has been sent. Thank you!");
+              $("#modalMessage").css("color", "green");
+              $("#myModal").css("display", "block");
+          }
+      });
+  });
+
+  // Close the modal when clicking anywhere outside of it
+  $(".modal").click(function () {
+      $(this).css("display", "none");
+  });
+});
+
