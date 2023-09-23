@@ -183,7 +183,7 @@ p {
 nav {
   position: fixed;
   background: linear-gradient(rgb(0, 48, 38),rgba(1, 72, 53, 0.988));
-  z-index: 999;
+  z-index: 98;
   width: 100%;
   padding: 20px;
   display: none;
@@ -640,7 +640,7 @@ margin: 0;
 }
 
 .main-button {
-  z-index: 98;
+  z-index: 50;
 }
 
 
@@ -667,7 +667,7 @@ margin: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 99;
 }
 
 .modal-content {

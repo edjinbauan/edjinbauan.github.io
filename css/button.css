@@ -332,7 +332,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .close-modal .lr {
-    z-index: 1051;
+    z-index: 97;
     width: 1px;
     height: 75px;
     margin-left: 35px;
@@ -342,7 +342,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 .portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
+    z-index: 97;
     width: 1px;
     height: 75px;
     -webkit-transform: rotate(90deg);
@@ -407,7 +407,7 @@ header.masthead .intro-text .intro-heading {
 
 .timeline>li .timeline-image {
     position: absolute;
-    z-index: 100;
+    z-index: 97;
     left: 0;
     width: 80px;
     height: 80px;
