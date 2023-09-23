@@ -82,7 +82,6 @@ nav ul li a {
   transition: all 0.5s ease-in-out 0s;
 }
 
-
 p {
   margin: 25px 0;
   padding: 0;
@@ -184,7 +183,7 @@ p {
 nav {
   position: fixed;
   background: linear-gradient(rgb(0, 48, 38),rgba(1, 72, 53, 0.988));
-  z-index: 1000;
+  z-index: 999;
   width: 100%;
   padding: 20px;
   display: none;
@@ -303,10 +302,9 @@ nav ul li a {
 /*-----------------------------------------------------------------------------------*/
 
 #about {
-  width: 100%;
   height: auto;
   background: #00291e;
-  padding-top: 190px;
+  padding-top: 20px;
 }
 
 #about .div-img-bg {
@@ -635,14 +633,19 @@ margin: 0;
   }
 }
 
+@media screen and (max-width: 992px) {
+  #particles-js {
+  display: none !important;
+  }
+}
+
 .main-button {
-  z-index: 99;
+  z-index: 98;
 }
 
 
 .DownloadResume {
-  padding-left: 77px;
-  padding-right: 430px;
+  width: 50%;
 }
 
 
