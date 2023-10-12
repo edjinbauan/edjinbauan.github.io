@@ -1,4 +1,4 @@
-<?php
+
   /**
   * Requires the "PHP Email Form" library
   * The "PHP Email Form" library is available only in the pro version of the template
@@ -6,36 +6,38 @@
   * For more info and help: https://bootstrapmade.com/php-email-form/
   */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'ejbauan@gmail.com';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+require 'path/to/forms/contact.php';
+require 'path/to/forms/contact.php';
 
-  $contact->smtp = array(
-    'host' => 'smtp.gmail.com',
-    'username' => 'ejbauan@gmail.com',
-    'password' => '09204828633Edjinbauan!!!',
-    'port' => '587'
-  );
- 
+// Create a new PHPMailer instance
+$mail = new PHPMailer();
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+// SMTP configuration
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';  // Replace with your SMTP server
+$mail->SMTPAuth = true;
+$mail->Username = 'ejbauan@gmail.com';  // Replace with your Gmail username
+$mail->Password = 'yevnhbsfgvyrfzem';  // Replace with your Gmail password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // TLS encryption
+$mail->Port = 587;  // Port for TLS
 
-  echo $contact->send();
-?>
+// Sender and recipient email addresses
+$mail->setFrom('ejbauan@gmail.com', 'Edjin Bauan');  // Replace with your name and email
+$mail->addAddress('ejbauan@gmail.com', 'Recipient Name');  // Replace with the recipient's name and email
+
+// Email subject and body
+$mail->Subject = 'Test Email';
+$mail->Body = 'This is a test email sent using PHPMailer.';
+
+// Send the email
+if ($mail->send()) {
+    echo 'Email sent successfully.';
+} else {
+    echo 'Email could not be sent. Error: ' . $mail->ErrorInfo;
+}
